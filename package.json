@@ -1,11 +1,28 @@
 {
   "name": "sms-code-input",
   "version": "0.1.0",
-  "private": true,
+  "license": "MIT",
+  "private": false,
+  "author": "Mr.Z <mizhon@live.cn>",
+  "main": "dist/SMSCodeInput.common.js",
+  "description": "SMS code input component for Vue2",
+  "keywords": [
+    "vue",
+    "vue2",
+    "vuejs",
+    "sms",
+    "code input",
+    "components"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build-package": "vue-cli-service build --target lib --name SMSCodeInput ./src/index.js"
+  },
+  "homepage": "",
+  "repository": {
+    "type": "git"
   },
   "dependencies": {
     "core-js": "^3.6.5",
