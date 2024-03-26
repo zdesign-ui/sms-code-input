@@ -10,8 +10,20 @@
 
 When you use it, you need to wrapper this component by an exact size container or element. (e.g: use <code>div</code> with definitely width)
 
+### step-1
 ```
-npm install
+vue create demo
+```
+### step-2
+```
+cd demo
+npm install sms-code-input
+```
+
+```html
+<div style="width: 300px">
+  <sms-code-input></sms-code-input>
+</div>
 ```
 
 ## Example
