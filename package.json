@@ -1,6 +1,6 @@
 {
   "name": "sms-code-input",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "license": "MIT",
   "private": false,
   "author": "Mr.Z <mizhon@live.cn>",
@@ -20,9 +20,10 @@
     "lint": "vue-cli-service lint",
     "build-package": "vue-cli-service build --target lib --name SMSCodeInput ./src/index.js"
   },
-  "homepage": "",
+  "homepage": "https://github.com/zdesign-ui/sms-code-input",
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "git@github.com:zdesign-ui/sms-code-input.git"
   },
   "dependencies": {
     "core-js": "^3.6.5",
