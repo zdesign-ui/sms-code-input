@@ -1,24 +1,26 @@
-# sms-code-input
+# SMS-CODE-INPUT
+> SMS code input component for Vue2 
 
-## Project setup
+ [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
+ [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/zdesign-ui/sms-code-input.git)
+
+ sms-code-input is a dependency-free, lightweight vue component that can be overwrited by yourself.
+
+## Usage
+
+When you use it, you need to wrapper this component by an exact size container or element. (e.g: use <code>div</code> with definitely width)
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## Example
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Options
+|    Property    |    Description   |   type   |	default	|
+| -----------------  | ---------------- | :--------: | :----------: |
+| digits         | the code counts for the SMS  |Number| 6 |
+| styles         | the custom styles you want to set |Object / Function | {} |
