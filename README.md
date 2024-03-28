@@ -35,5 +35,5 @@ npm run serve
 ### Options
 |    Property    |    Description   |   type   |	default	|
 | -----------------  | ---------------- | :--------: | :----------: |
-| digits         | the code counts for the SMS  |Number| 6 |
+| digits         | the code numbers for the SMS  |Number| 6 |
 | styles         | the custom styles you want to set |Object / Function | {} |
