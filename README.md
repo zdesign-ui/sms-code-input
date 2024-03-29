@@ -37,3 +37,9 @@ npm run serve
 | -----------------  | ---------------- | :--------: | :----------: |
 | digits         | the code numbers for the SMS  |Number| 6 |
 | styles         | the custom styles you want to set |Object / Function | {} |
+
+### Functions
+|    Function Name   |    Description   |
+| -----------------  | ---------------- |
+| change             | trigger when input code changed   |
+| complete           | tirgger when input code completed |
