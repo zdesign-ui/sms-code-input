@@ -21,15 +21,36 @@ cd demo
 npm install sms-code-input
 ```
 
-```html
-<div style="width: 300px">
-  <sms-code-input></sms-code-input>
-</div>
-```
-
 ## Example
 ```
 npm run serve
+```
+```vue
+<template>
+  <div style="width: 300px">
+    <sms-code-input 
+      :digits="4" 
+      @change="onInputeChange" 
+      @complete="onInputComplete"
+    >
+    </sms-code-input>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {}
+  },
+  methods: {
+    onInputeChange(val) {
+      console.log('input change: --->', val)
+    },
+    onInputComplete(val) {
+      console.log('input complete: --->', val)
+    }
+  }
+}
+</script>
 ```
 
 ### Options
