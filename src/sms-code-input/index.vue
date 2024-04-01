@@ -9,10 +9,11 @@
       :data-id="index"
       :value="code"
       class="code"
-      :style="styles"
+      :style="getCustomStyles(index)"
       autofocus="true"
       v-on:input="onValueChange"
-      v-on:focus="onFocus"
+      v-on:focus="onFocus(index)"
+      v-on:blur="onBlur"
       v-on:keydown="onKeyDown"
       oninput="if (value.length > 1) { value = value.slice(0, 1) }"
     />
@@ -35,9 +36,14 @@ export default {
       type: Number,
       default: 6
     },
+    // input color
+    color: {
+      type: String,
+      default: '#af3737'
+    },
     // 用户自定义样式
     styles: {
-      type: [Object, Function],
+      type: Object,
       default: () => {}
     }
   },
@@ -50,9 +56,27 @@ export default {
     // 根据传入的digits设置code input数量
     const codes = Array(digits).fill('')
 
-    return { codes: codes }
+    return {
+      customStyles: '',
+      focusedIndex: null, // 跟踪当前获得焦点的输入框的索引
+      isFocus: false,
+      codes: codes
+    }
   },
   methods: {
+    getCustomStyles (index) {
+      if (this.focusedIndex === index) {
+        return {
+          border: `1px solid ${this.color}`,
+          caretColor: `${this.color}`,
+          ...this.styles
+        }
+      } else {
+        return {
+          ...this.styles
+        }
+      }
+    },
     onKeyDown (e) {
       // 禁止输入 +,-,e等字符
       if (e.code === 'KeyE' || e.code === 'Minus' || e.code === 'Equal') {
@@ -120,8 +144,14 @@ export default {
       }
       this._triggerChanged(this.codes)
     },
-    onFocus (e) {
-      e.target.select(e)
+    onFocus (idx) {
+      this.focusedIndex = idx
+      this.isFocus = true
+    },
+    onBlur () {
+      // 处理失去焦点事件
+      this.focusedIndex = null
+      this.isFocus = false
     },
     _triggerChanged (values = this.codes) {
       const flag = values.every(val => val !== '')
