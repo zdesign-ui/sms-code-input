@@ -29,8 +29,10 @@ npm run serve
 <template>
   <div style="width: 300px">
     <sms-code-input 
-      :digits="4" 
-      @change="onInputeChange" 
+      :digits="counts"
+      :color="color"
+      :styles="styles"
+      @change="onInputChange" 
       @complete="onInputComplete"
     >
     </sms-code-input>
@@ -39,10 +41,19 @@ npm run serve
 <script>
 export default {
   data() {
-    return {}
+    return {
+      counts: 4,
+      color: '#409eff',
+      styles: {
+        height: '50px',
+        width: '30px',
+        fontSize: '20px',
+        color: '#275edb'
+      }
+    }
   },
   methods: {
-    onInputeChange(val) {
+    onInputChange(val) {
       console.log('input change: --->', val)
     },
     onInputComplete(val) {
