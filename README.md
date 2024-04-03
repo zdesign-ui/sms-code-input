@@ -68,7 +68,8 @@ export default {
 |    Property    |    Description   |   type   |	default	|
 | -----------------  | ---------------- | :--------: | :----------: |
 | digits         | the code numbers for the SMS  |Number| 6 |
-| styles         | the custom styles you want to set |Object / Function | {} |
+| color          | the input border color  |String| '#af3737' |
+| styles         | the custom styles for the input |Object | {} |
 
 ### Functions
 |    Function Name   |    Description   |
