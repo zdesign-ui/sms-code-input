@@ -85,7 +85,6 @@ export default {
       const index = parseInt(e.target.dataset.id)
       const prev = this.iRefs[index - 1] // 如果index=0时，数组下标为-1, prev为 undefined
       const next = this.iRefs[index + 1]
-
       switch (e.keyCode) {
         // 键盘按下向左键
         case KEYBOARD_CODE.left: {
@@ -109,16 +108,16 @@ export default {
         case KEYBOARD_CODE.backspace: {
           e.preventDefault()
           const vals = [...this.codes]
-          if (this.codes[index]) {
-            vals[index] = ''
-            this.codes = vals
-            if (prev) {
-              const element = this.$refs[prev][0]
-              element.focus()
-              element.select()
-            }
-            this._triggerChanged(vals)
+
+          vals[index] = ''
+          this.codes = vals
+          if (prev) {
+            const element = this.$refs[prev][0]
+            element.focus()
+            element.select()
           }
+          this._triggerChanged(vals)
+
           break
         }
         // 键盘按下上、下键
